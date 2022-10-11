@@ -1,1 +1,1 @@
-# c-sample
+# sample-app-c
