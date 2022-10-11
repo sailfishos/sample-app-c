@@ -27,7 +27,7 @@
  */
 
 #include <stdio.h>
-#include <ssusysinfo/ssusysinfo.h>
+#include <ssusysinfo.h>
 
 int main(int argc, char **argv)
 {

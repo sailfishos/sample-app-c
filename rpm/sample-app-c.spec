@@ -15,7 +15,7 @@ Simple app written in C
 
 %build
 cd src
-gcc -o sample-app-c sample-app-c.c -lssusysinfo
+gcc -o sample-app-c sample-app-c.c $(pkg-config --cflags --libs ssu-sysinfo)
 
 %install
 rm -rf %{buildroot}
