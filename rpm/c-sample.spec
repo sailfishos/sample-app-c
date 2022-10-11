@@ -15,12 +15,12 @@ Simple app written in C
 
 %build
 cd src
-gcc -o c-sample c-sample.c $(pkg-config --cflags --libs ssu-sysinfo)
+make
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}%{_bindir}
-install -m755 src/c-sample %{buildroot}%{_bindir}
+cd src
+DESTDIR=%{buildroot} make install
 
 %files
 %defattr(-,root,root,-)
