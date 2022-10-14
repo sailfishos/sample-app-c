@@ -14,13 +14,14 @@ Simple app written in C
 %autosetup -p1 -n %{name}-%{version}
 
 %build
-cd src
-gcc -o sample-app-c sample-app-c.c -lssusysinfo
+# If you need to pass arguments to make, replace "%make_build" with
+# "make -C src". This will not be necessary with SDK release 3.10 and
+# later.
+%make_build
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}%{_bindir}
-install -m755 src/sample-app-c %{buildroot}%{_bindir}
+%make_install
 
 %files
 %defattr(-,root,root,-)
